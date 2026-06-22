@@ -6,8 +6,6 @@
 4. Vulnerability Discovery Date: June 18, 2026
 5. Vulnerability Category: Authenticated OS Command Injection (Binary Vulnerability)
 6. Vulnerable Interface: `/cgi-bin/UploadCfg`
-7. CVSS 3.1 Vector: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
-8. CVSS Score: 8.8 (High Risk)
 
 ### 1. Vulnerability Overview
 Tenda AX12 Pro V2.0 is a consumer-oriented Wi-Fi 6 gigabit router. Its background configuration upload interface `/cgi-bin/UploadCfg` suffers from an authenticated command injection vulnerability.
