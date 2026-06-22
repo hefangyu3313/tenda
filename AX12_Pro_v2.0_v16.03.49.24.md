@@ -24,7 +24,7 @@ Attackers with valid web management login credentials (valid Cookie and stok tok
 
 #### 2.2 Root Cause
 The `UploadCfg` function inside `libgo.so` parses the user-controlled `filename` value from the multipart upload request and stores it in the upload information structure.  
-The `websNormalizeUriPath()` function only normalizes path symbols such as `/` and `..`, and does **not** filter shell meta-characters including `'`, `$`, `(`, `)`, `;`, `` ` ``, `&`, `|`.
+The websNormalizeUriPath() function only sanitizes path traversal characters like / and .., with no filtering applied to shell meta-characters such as single quotes, dollar signs, parentheses, semicolons, backticks, ampersands, and vertical bars.
 
 The vulnerable code snippet uses `snprintf` to splice the unsanitized client filename directly into a shell command string, then passes the constructed string to the dangerous `system()` function for execution:
 
